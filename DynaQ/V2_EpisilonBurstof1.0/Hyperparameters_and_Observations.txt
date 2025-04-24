@@ -14,6 +14,10 @@ output_size = 6
 # INITIALIZE OTHER NETWORK PARAMS HERE
 hidden_size = 128
 
+Update target every 5 episodes
+Mean Rewards: -196.51230416851294
+
+
 Epsilon Burst of 1.0 every 1000 episodes
 1. The agent is robust enough to recover quickly.
 Dyna-Q agent might already have a pretty resilient Q-network.

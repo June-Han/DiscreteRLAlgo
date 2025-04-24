@@ -1,0 +1,30 @@
+learning_rate = 3e-4
+batch_size = 128
+clip_value = 1.0  # Gradient clipping value
+gamma = 0.8
+planning_steps = 120
+epsilon_decay = 0.998
+epsilon = 1.0
+epsilon_min = 0.05
+
+# Initialize the network and optimizer
+input_size = 11
+output_size = 6
+
+# INITIALIZE OTHER NETWORK PARAMS HERE
+hidden_size = 128
+
+Epsilon Burst of 1.0 every 1000 episodes
+1. The agent is robust enough to recover quickly.
+Dyna-Q agent might already have a pretty resilient Q-network.
+So after a random burst (epsilon=1), it re-learns the policy quickly from the buffer and stabilizes back to decent performance.
+
+The "plateau near -100" shows the agent still has a strong enough memory and policy to recover quickly once epsilon decays again. A "reset and relearn" pattern that disrupts but doesn't erase learning.
+This suggests:
+Learning setup is solid, but the high-epsilon bursts might be too extreme or frequent.
+The environment is still very harsh, so the best policies still yield low negative rewards.
+
+
+2. The plateau around -100 means it's hitting a "local optimum".
+Possibly, the agent has found a safe but suboptimal strategy: it avoids extreme penalties but doesn't maximize long-term gains.
+Exploration bursts aren’t discovering significantly better policies — maybe due to harsh penalties or sparse positive rewards.

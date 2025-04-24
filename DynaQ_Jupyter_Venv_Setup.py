@@ -39,3 +39,21 @@ pip install opencv-python
 
 
 #Ensures that %matplotlib inline is at the start of each cell for liveplotting
+
+#Install the venv as kernel option in jupyter
+python -m ipykernel install --user --name=RLvenv
+#Activate the venv before starting jupyter notebook in venv
+
+'''
+Removing the kernel and virtual environment¶
+To remove the test RLvenv virtual environment, it first needs to be removed as a Jupyter kernel. 
+First, make sure that the virtual environment has been activated.
+
+The following command will remove Jupyter kernel that refers to the RLvenv virtual environment.
+'''
+Jupyter kernelspec remove my_markdown
+
+#Then run the deactivate command.
+
+#References for kernel
+https://docs.support.arc.umich.edu/python/jupyter_virtualenv/

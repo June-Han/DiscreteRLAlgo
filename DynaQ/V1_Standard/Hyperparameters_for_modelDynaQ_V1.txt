@@ -11,4 +11,6 @@ hidden_size=128
 input_size=11
 output_size=6
 
+update target every 20 episodes
+
 Mean Rewards: -143.1598088517308
